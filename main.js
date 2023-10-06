@@ -7,20 +7,11 @@ import { render } from "./core/render";
 
 const app = document.querySelector("body");
 
-const buttonsAutoriz = [
-  {
-    textContent: "Login",
-  },
-  {
-    textContent: "Register",
-  },
-].map((btn) => {
-  return new Button({
-    tagName: "button",
-    className: "btn",
-    textContent: btn.textContent,
-  });
-});
+const footer = new Component({
+  tagName: "div",
+  className: "footer",
+  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |"
+}).toHTML();
 const buttonsMainBlock = [
   {
     textContent: "Login",
@@ -69,10 +60,16 @@ const mainBlockProfil = new Component({
   textContent: "Name Profile",
 }).toHTML();
 
+const buttonsBlockWrapper = new Component({
+  tagName: "div",
+  className: "buttonsBlockWrapper",
+  children: [...buttonsMainBlock],
+}).toHTML();
+
 const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
-  children: [...buttonsMainBlock, mainBlockProfil],
+  children: [buttonsBlockWrapper, mainBlockProfil],
 }).toHTML();
 
 const mainBlock = new Component({
@@ -84,7 +81,7 @@ const mainBlock = new Component({
 const App = new Application({
   tagName: "div",
   className: "app",
-  children: [mainBlock, ...buttonsAutoriz],
+  children: [mainBlock, footer],
 }).toHTML();
 
 prepend(app, App);

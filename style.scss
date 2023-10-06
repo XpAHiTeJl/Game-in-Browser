@@ -21,6 +21,7 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(./public/bg-main-menu.gif);
 }
 
 h1 {
@@ -53,4 +54,10 @@ button {
 }
 .mainBlockProfil {
   text-align: center;
+}
+
+.buttonsBlockWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
