@@ -7,18 +7,11 @@ import { render } from "./core/render";
 
 const app = document.querySelector("body");
 
-const buttonsAutoriz = [
-  {
-    textContent: "Login",
-  },
-  {
-    textContent: "Register",
-  },
-].map((btn) => {
+const buttonsFooter = [""].map(() => {
   return new Button({
-    tagName: "button",
-    className: "btn",
-    textContent: btn.textContent,
+    tagName: "div",
+    className: "footer",
+    textContent: "Footer",
   });
 });
 const buttonsMainBlock = [
@@ -84,7 +77,7 @@ const mainBlock = new Component({
 const App = new Application({
   tagName: "div",
   className: "app",
-  children: [mainBlock, ...buttonsAutoriz],
+  children: [mainBlock, ...buttonsFooter],
 }).toHTML();
 
 prepend(app, App);
