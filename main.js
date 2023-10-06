@@ -21,25 +21,64 @@ const buttonsAutoriz = [
     textContent: btn.textContent,
   });
 });
-
-const inputs = [
+const buttonsMainBlock = [
   {
-    placeholder: "name",
+    textContent: "Login",
   },
   {
-    placeholder: "surname",
+    textContent: "Register",
   },
-].map((input) => {
-  return new Input({
-    className: "input",
-    placeholder: input.placeholder,
+].map((btn) => {
+  return new Button({
+    tagName: "button",
+    className: "btn",
+    textContent: btn.textContent,
   });
 });
+
+const buttonsMainMenu = [
+  {
+    textContent: "New Game",
+  },
+  {
+    textContent: "Load Game",
+  },
+  {
+    textContent: "Exit Profile",
+  },
+  {
+    textContent: "Exit Game",
+  },
+].map((btn) => {
+  return new Button({
+    tagName: "button",
+    className: "btn",
+    textContent: btn.textContent,
+  });
+});
+
+const mainBlockmenu = new Component({
+  tagName: "div",
+  className: "mainBlockmenu",
+  children: [...buttonsMainMenu],
+}).toHTML();
+
+const mainBlockProfil = new Component({
+  tagName: "div",
+  className: "mainBlockProfil",
+  textContent: "Name Profile",
+}).toHTML();
+
+const mainBlockAutorization = new Component({
+  tagName: "div",
+  className: "mainBlockAutorization",
+  children: [...buttonsMainBlock, mainBlockProfil],
+}).toHTML();
 
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [...inputs],
+  children: [mainBlockAutorization, mainBlockmenu],
 }).toHTML();
 
 const App = new Application({
