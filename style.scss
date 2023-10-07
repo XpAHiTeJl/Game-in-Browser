@@ -38,7 +38,7 @@ button {
 }
 
 .mainBlock,
-.mainBlockmenu {
+.mainBlockMenu {
   @include d-flex(center, stretch, column);
 }
 .footer {
@@ -54,6 +54,8 @@ button {
     margin: $margin-xl;
 
     .buttonsBlockWrapper {
+      @include d-flex(center, center);
+
       button {
         transition: 0.4s ease-in-out;
       }
@@ -61,8 +63,14 @@ button {
         background-color: $thrid-bg;
       }
     }
+    .mainBlockProfil {
+      text-align: center;
+      font-family: $ff-secondary;
+      border-bottom: 1px solid;
+      margin-top: $margin-m;
+    }
   }
-  .mainBlockmenu {
+  &Menu {
     button {
       transition: 0.4s ease-in-out;
     }
@@ -70,16 +78,6 @@ button {
       background-color: $thrid-bg;
     }
   }
-  &Profil {
-    margin-top: $margin-m;
+  &Volume {
   }
-}
-.mainBlockProfil {
-  text-align: center;
-  font-family: $ff-secondary;
-  border-bottom: 1px solid;
-}
-
-.buttonsBlockWrapper {
-  @include d-flex(center, center);
 }

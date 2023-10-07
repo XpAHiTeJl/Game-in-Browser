@@ -12,21 +12,33 @@ const footer = new Component({
   className: "footer",
   textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
 }).toHTML();
-const buttonsMainBlock = [
-  {
-    textContent: "Login",
-  },
-  {
-    textContent: "Register",
-  },
-].map((btn) => {
-  return new Button({
-    tagName: "button",
-    className: "btn",
-    textContent: btn.textContent,
-  });
-});
+// Отображение звука
+// const buttonMainVolume = [
+//   {
+//     textContent: "",
+//   },
+//   {
+//     textContent: "",
+//     className: "volumMenu",
+//   },
+// ].map((btn) => {
+//   return new Button({
+//     tagName: "button",
+//     className: "btn",
+//     textContent: btn.textContent,
+//   });
+// });
+const buttonMainVolume = new Component({
+  tagName: "button",
+  className: "MainVolume",
+}).toHTML();
 
+const mainBlockVolume = new Component({
+  tagName: "div",
+  className: "mainBlockVolume",
+}).toHTML();
+append(mainBlockVolume, buttonMainVolume);
+// Вкладки в главно меню ( новая игра, загрузить игру...)
 const buttonsMainMenu = [
   {
     textContent: "New Game",
@@ -47,35 +59,48 @@ const buttonsMainMenu = [
     textContent: btn.textContent,
   });
 });
-
-const mainBlockmenu = new Component({
-  tagName: "div",
-  className: "mainBlockmenu",
-  children: [...buttonsMainMenu],
-}).toHTML();
+// Лоигн и Пароль в главном меню
+const buttonsAutorizationBlock = [
+  {
+    textContent: "Login",
+  },
+  {
+    textContent: "Register",
+  },
+].map((btn) => {
+  return new Button({
+    tagName: "button",
+    className: "btn",
+    textContent: btn.textContent,
+  });
+});
 
 const mainBlockProfil = new Component({
   tagName: "div",
   className: "mainBlockProfil",
   textContent: "Name Profile",
 }).toHTML();
-
 const buttonsBlockWrapper = new Component({
   tagName: "div",
   className: "buttonsBlockWrapper",
-  children: [...buttonsMainBlock],
+  children: [...buttonsAutorizationBlock],
 }).toHTML();
-
+// Основные блоки, меню и авторизации
+const mainBlockmenu = new Component({
+  tagName: "div",
+  className: "mainBlockMenu",
+  children: [...buttonsMainMenu],
+}).toHTML();
 const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
   children: [buttonsBlockWrapper, mainBlockProfil],
 }).toHTML();
-
+// ---
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [mainBlockAutorization, mainBlockmenu],
+  children: [mainBlockAutorization, mainBlockmenu, mainBlockVolume],
 }).toHTML();
 
 const App = new Application({
