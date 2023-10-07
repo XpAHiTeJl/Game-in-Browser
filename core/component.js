@@ -1,6 +1,7 @@
 import { append, appendMany } from "../utils/append";
 import { defineEvent } from "../utils/defineEvent";
 import { isArray } from "../utils/isArray";
+import { render } from "./render";
 
 export class Component {
   constructor({
@@ -20,18 +21,17 @@ export class Component {
     this.children = children;
     if (events) this.events = events;
     this.attrs = attrs;
-  }
 
-  toHTML() {
     const element = document.createElement(this.tagName);
     if (this.className) element.className = this.className;
     if (this.textContent) element.textContent = this.textContent;
     if (this.html) element.insertAdjacentHTML(html.position, html.htmlText);
 
-    if (this.children && this.children.length > 1) {
-      appendMany(element, this.children);
+    if (this.children) {
+      for (const child of this.children) {
+        append(element, child);
+      }
     }
-
     if (this.attrs) {
       for (const attr in this.attrs) {
         const value = this.attrs[attr];
@@ -42,15 +42,18 @@ export class Component {
 
     if (!this.events) return element;
 
-    for (const event of this.events) {
-      for (const keyOfEvent in event) {
-        defineEvent({
-          el: element,
-          event: keyOfEvent,
-          eventFunc: event[keyOfEvent],
-        });
-      }
+    for (const event in events) {
+      this.addEventListener(event, events[event]);
     }
+    // for (const event of this.events) {
+    //   for (const keyOfEvent in event) {
+    //     defineEvent({
+    //       el: element,
+    //       event: keyOfEvent,
+    //       eventFunc: event[keyOfEvent],
+    //     });
+    //   }
+    // }
 
     return element;
   }
