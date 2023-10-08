@@ -51,18 +51,15 @@ button {
   font-family: $ff-primary;
   &Autorization {
     margin: $margin-xl;
-
-    .buttonsBlockWrapper {
-      @include d-flex(center, center);
-
-      button {
-        transition: 0.4s ease-in-out;
-      }
-      :hover {
-        background-color: $thrid-bg;
-      }
+    .Login,
+    .Registred {
+      transition: 0.4s ease-in-out;
     }
-    .mainBlockProfil {
+    button:hover {
+      background-color: $thrid-bg;
+    }
+
+    .Profil {
       text-align: center;
       font-family: $ff-secondary;
       border-bottom: 1px solid;
@@ -70,16 +67,14 @@ button {
     }
   }
   &Menu {
+    @include d-flex(center, center, column);
+
     button {
+      width: 250px;
       transition: 0.4s ease-in-out;
     }
     :hover {
       background-color: $thrid-bg;
     }
   }
-  &Volume {
-  }
-}
-.MainVolume {
-  width: 50px;
 }

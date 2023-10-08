@@ -42,18 +42,15 @@ export class Component {
 
     if (!this.events) return element;
 
-    for (const event in events) {
-      this.addEventListener(event, events[event]);
+    for (const event of this.events) {
+      for (const keyOfEvent in event) {
+        defineEvent({
+          el: element,
+          event: keyOfEvent,
+          eventFunc: event[keyOfEvent],
+        });
+      }
     }
-    // for (const event of this.events) {
-    //   for (const keyOfEvent in event) {
-    //     defineEvent({
-    //       el: element,
-    //       event: keyOfEvent,
-    //       eventFunc: event[keyOfEvent],
-    //     });
-    //   }
-    // }
 
     return element;
   }
