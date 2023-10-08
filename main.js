@@ -10,78 +10,58 @@ const app = document.querySelector("body");
 const footer = new Component({
   tagName: "div",
   className: "footer",
-  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |"
-}).toHTML();
-const buttonsMainBlock = [
-  {
-    textContent: "Login",
-  },
-  {
-    textContent: "Register",
-  },
-].map((btn) => {
-  return new Button({
-    tagName: "button",
-    className: "btn",
-    textContent: btn.textContent,
-  });
+  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
 });
-
-const buttonsMainMenu = [
-  {
-    textContent: "New Game",
-  },
-  {
-    textContent: "Load Game",
-  },
-  {
-    textContent: "Exit Profile",
-  },
-  {
-    textContent: "Exit Game",
-  },
-].map((btn) => {
-  return new Button({
-    tagName: "button",
-    className: "btn",
-    textContent: btn.textContent,
-  });
-});
-
-const mainBlockmenu = new Component({
-  tagName: "div",
-  className: "mainBlockmenu",
-  children: [...buttonsMainMenu],
-}).toHTML();
-
-const mainBlockProfil = new Component({
-  tagName: "div",
-  className: "mainBlockProfil",
-  textContent: "Name Profile",
-}).toHTML();
-
-const buttonsBlockWrapper = new Component({
-  tagName: "div",
-  className: "buttonsBlockWrapper",
-  children: [...buttonsMainBlock],
-}).toHTML();
 
 const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
-  children: [buttonsBlockWrapper, mainBlockProfil],
-}).toHTML();
+  children: [
+    new Button({
+      className: "Login",
+      textContent: "Login",
+    }),
+    new Button({
+      className: "Register",
+      textContent: "Register",
+    }),
+    new Component({
+      tagName: "div",
+      className: "Profil",
+      textContent: "Name Profile",
+    }),
+  ],
+});
+
+const mainBlockMenu = new Component({
+  tagName: "div",
+  className: "mainBlockMenu",
+  children: [
+    new Button({
+      className: "New Game",
+      textContent: "New Game",
+    }),
+    new Button({
+      className: "Load Game",
+      textContent: "Load Game",
+    }),
+    new Button({
+      className: "Exit Profile",
+      textContent: "Exit Profile",
+    }),
+  ],
+});
 
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [mainBlockAutorization, mainBlockmenu],
-}).toHTML();
+  children: [mainBlockAutorization, mainBlockMenu],
+});
 
 const App = new Application({
   tagName: "div",
   className: "app",
   children: [mainBlock, footer],
-}).toHTML();
+});
 
 prepend(app, App);
