@@ -1,4 +1,5 @@
 import "./style.scss";
+import { inputsAndSubmit } from "./public/pagesJS/register";
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
 import { append, prepend } from "./utils/append";
@@ -6,12 +7,6 @@ import { Component } from "./core/component";
 import { render } from "./core/render";
 
 const app = document.querySelector("body");
-
-const footer = new Component({
-  tagName: "div",
-  className: "footer",
-  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
-});
 
 const mainBlockAutorization = new Component({
   tagName: "div",
@@ -24,14 +19,15 @@ const mainBlockAutorization = new Component({
     new Button({
       className: "Register",
       textContent: "Register",
-    }),
-    new Component({
-      tagName: "div",
-      className: "Profil",
-      textContent: "Name Profile",
-    }),
+    })
   ],
 });
+
+const profile = new Component({
+  tagName: "div",
+  className: "profile",
+  textContent: "Name Profile",
+})
 
 const mainBlockMenu = new Component({
   tagName: "div",
@@ -55,7 +51,13 @@ const mainBlockMenu = new Component({
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [mainBlockAutorization, mainBlockMenu],
+  children: [mainBlockAutorization, profile, mainBlockMenu, inputsAndSubmit]
+});
+
+const footer = new Component({
+  tagName: "div",
+  className: "footer",
+  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
 });
 
 const App = new Application({
