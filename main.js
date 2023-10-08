@@ -1,4 +1,5 @@
 import "./style.scss";
+import { BlockAuth } from "./public/pagesJS/login";
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
 import { append, prepend } from "./utils/append";
@@ -17,13 +18,19 @@ const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
   children: [
-    new Button({
-      className: "Login",
-      textContent: "Login",
-    }),
-    new Button({
-      className: "Register",
-      textContent: "Register",
+    new Component({
+      tagName: "div",
+      className: "BlockAutorization",
+      children: [
+        new Button({
+          className: "Login",
+          textContent: "Login",
+        }),
+        new Button({
+          className: "Register",
+          textContent: "Register",
+        }),
+      ],
     }),
     new Component({
       tagName: "div",
@@ -55,7 +62,7 @@ const mainBlockMenu = new Component({
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [mainBlockAutorization, mainBlockMenu],
+  children: [mainBlockAutorization, mainBlockMenu, BlockAuth],
 });
 
 const App = new Application({
