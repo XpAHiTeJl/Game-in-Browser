@@ -22,8 +22,8 @@ const mainBlockAutorization = new Component({
       textContent: "Login",
     }),
     new Button({
-      className: "Registred",
-      textContent: "Registred",
+      className: "Register",
+      textContent: "Register",
     }),
     new Component({
       tagName: "div",
