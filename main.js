@@ -62,7 +62,14 @@ const mainBlockMenu = new Component({
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [mainBlockAutorization, mainBlockMenu, BlockAuth],
+  children: [
+    mainBlockAutorization,
+    mainBlockMenu,
+    BlockAuth,
+    new Button({
+      className: "exitButton",
+    }),
+  ],
 });
 
 const App = new Application({
