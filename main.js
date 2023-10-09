@@ -5,6 +5,7 @@ import { Button, Input } from "./component/index";
 import { append, prepend } from "./utils/append";
 import { Component } from "./core/component";
 import { render } from "./core/render";
+import { defineEvent } from "./utils/defineEvent";
 
 const app = document.querySelector("body");
 
@@ -68,6 +69,11 @@ const mainBlock = new Component({
     BlockAuth,
     new Button({
       className: "exitButton",
+      events: {
+        click: () => {
+          console.log("Exit");
+        },
+      },
     }),
   ],
 });

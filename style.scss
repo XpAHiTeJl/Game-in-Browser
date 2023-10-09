@@ -49,7 +49,10 @@ button {
 
   &Autorization {
     @include d-flex(center, center, column);
-    display: none;
+    // ----------------------------------------
+    // display: none;
+    // ----------------------------------------
+
     margin: $margin-xl;
 
     .BlockAutorization {
@@ -71,7 +74,9 @@ button {
   }
   &Menu {
     @include d-flex(center, center, column);
-    display: none;
+    // ---------------------------------------
+    // display: none;
+    // ----------------------------------------
 
     button {
       width: 250px;
@@ -83,7 +88,10 @@ button {
   }
   .BlockAuth {
     @include d-flex(center, center, column);
+    // -------------------------
     // display: none;
+    // ----------------------------------------
+
     &_mail,
     &_password {
       margin: $margin-xs;
