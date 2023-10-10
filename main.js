@@ -66,24 +66,21 @@ const mainBlockMenu = new Component({
 
 const defaultBlock = new Component({
   tagName: "div",
-  className: "defoultBlock",
+  className: "defaultBlock",
   children: [mainBlockAutorization, mainBlockMenu],
+});
+
+const exitButton = new Button({
+  className: "exitButton hidden",
+  events: {
+    click: toggleLogine,
+  },
 });
 
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [
-    defaultBlock,
-    BlockAuth,
-
-    new Button({
-      className: " exitButton ",
-      events: {
-        click: toggleLogine,
-      },
-    }),
-  ],
+  children: [defaultBlock, BlockAuth, exitButton],
 });
 
 const App = new Application({
@@ -96,9 +93,11 @@ function toggleLogine() {
   if (isMainBlockVisible) {
     defaultBlock.className = defaultBlock.className.concat(" ", "hidden");
     BlockAuth.className = BlockAuth.className.replace(" hidden", "");
+    exitButton.className = exitButton.className.replace(" hidden", "");
   } else {
     defaultBlock.className = defaultBlock.className.replace(" hidden", "");
     BlockAuth.className = BlockAuth.className.concat(" ", "hidden");
+    exitButton.className = exitButton.className.concat(" ", "hidden");
   }
   isMainBlockVisible = !isMainBlockVisible;
 }

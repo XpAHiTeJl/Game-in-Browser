@@ -7,7 +7,7 @@ import { render } from "../../core/render";
 
 export const BlockAuth = new Component({
   tagName: "div",
-  className: " BlockAuth hidden ",
+  className: "BlockAuth hidden",
   children: [
     new Input({
       className: "BlockAuth_mail",
