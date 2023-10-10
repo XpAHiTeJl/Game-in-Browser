@@ -2,12 +2,13 @@ import "./style.scss";
 import { BlockAuth } from "./public/pagesJS/login";
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
-import { append, prepend } from "./utils/append";
+import { append, prepend, remove } from "./utils/append";
 import { Component } from "./core/component";
 import { render } from "./core/render";
 import { defineEvent } from "./utils/defineEvent";
 
 const app = document.querySelector("body");
+let isMainBlockVisible = true;
 
 const footer = new Component({
   tagName: "div",
@@ -26,6 +27,9 @@ const mainBlockAutorization = new Component({
         new Button({
           className: "Login",
           textContent: "Login",
+          events: {
+            click: toggleLogine,
+          },
         }),
         new Button({
           className: "Register",
@@ -60,19 +64,23 @@ const mainBlockMenu = new Component({
   ],
 });
 
+const defaultBlock = new Component({
+  tagName: "div",
+  className: "defoultBlock",
+  children: [mainBlockAutorization, mainBlockMenu],
+});
+
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
   children: [
-    mainBlockAutorization,
-    mainBlockMenu,
+    defaultBlock,
     BlockAuth,
+
     new Button({
-      className: "exitButton",
+      className: " exitButton ",
       events: {
-        click: () => {
-          console.log("Exit");
-        },
+        click: toggleLogine,
       },
     }),
   ],
@@ -83,5 +91,16 @@ const App = new Application({
   className: "app",
   children: [mainBlock, footer],
 });
+
+function toggleLogine() {
+  if (isMainBlockVisible) {
+    defaultBlock.className = defaultBlock.className.concat(" ", "hidden");
+    BlockAuth.className = BlockAuth.className.replace(" hidden", "");
+  } else {
+    defaultBlock.className = defaultBlock.className.replace(" hidden", "");
+    BlockAuth.className = BlockAuth.className.concat(" ", "hidden");
+  }
+  isMainBlockVisible = !isMainBlockVisible;
+}
 
 prepend(app, App);
