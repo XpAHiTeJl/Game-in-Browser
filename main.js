@@ -8,7 +8,6 @@ import { render } from "./core/render";
 import { defineEvent } from "./utils/defineEvent";
 
 const app = document.querySelector("body");
-let isMainBlockVisible = true;
 
 const footer = new Component({
   tagName: "div",
@@ -90,16 +89,9 @@ const App = new Application({
 });
 
 function toggleLogine() {
-  if (isMainBlockVisible) {
-    defaultBlock.className = defaultBlock.className.concat(" ", "hidden");
-    BlockAuth.className = BlockAuth.className.replace(" hidden", "");
-    exitButton.className = exitButton.className.replace(" hidden", "");
-  } else {
-    defaultBlock.className = defaultBlock.className.replace(" hidden", "");
-    BlockAuth.className = BlockAuth.className.concat(" ", "hidden");
-    exitButton.className = exitButton.className.concat(" ", "hidden");
-  }
-  isMainBlockVisible = !isMainBlockVisible;
+  defaultBlock.classList.toggle("hidden");
+  BlockAuth.classList.toggle("hidden");
+  exitButton.classList.toggle("hidden");
 }
 
 prepend(app, App);
