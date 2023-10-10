@@ -5,6 +5,7 @@ import { Button, Input } from "./component/index";
 import { append, prepend } from "./utils/append";
 import { Component } from "./core/component";
 import { render } from "./core/render";
+import { defineEvent } from "./utils/defineEvent";
 
 const app = document.querySelector("body");
 
@@ -44,6 +45,13 @@ const mainBlockMenu = new Component({
     new Button({
       className: "Exit Profile",
       textContent: "Exit Profile",
+      events: defineEvent({
+        el: "Exit Profile",
+        event: "click",
+        eventFunc: () => {
+          console.log("exit");
+        },
+      })
     }),
   ],
 });
