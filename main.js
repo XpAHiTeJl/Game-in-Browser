@@ -1,11 +1,9 @@
 import "./style.scss";
-import { BlockAuth } from "./public/pagesJS/login";
+import { BlockAuth } from "./component/Login/login";
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
 import { append, prepend, remove } from "./utils/append";
 import { Component } from "./core/component";
-import { render } from "./core/render";
-import { defineEvent } from "./utils/defineEvent";
 
 const app = document.querySelector("body");
 

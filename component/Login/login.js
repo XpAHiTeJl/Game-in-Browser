@@ -1,9 +1,5 @@
-import "../pagesSCSS/login.scss";
-import { App as Application } from "../../App/App";
 import { Button, Input } from "../../component/index";
-import { append, prepend } from "../../utils/append";
 import { Component } from "../../core/component";
-import { render } from "../../core/render";
 
 export const BlockAuth = new Component({
   tagName: "div",
