@@ -37,7 +37,7 @@ button {
 
   &Autorization {
     @include d-flex(center, center, column);
-    margin: $margin-xl;
+    margin: $margin-l;
     .BlockAutorization {
       .Login,
       .Registred {
