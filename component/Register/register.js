@@ -25,5 +25,22 @@ export const BlockRegister = new Component({
     new Button({
       className: "exitButton",
     }),
+    new Button({
+      className: "BlockRegister_ShowIcon",
+      events: {
+        click: HidePassword,
+      },
+    }),
+    new Button({
+      className: "BlockRegister_Icon hidden",
+      events: {
+        click: HidePassword,
+      },
+    }),
   ],
 });
+
+function HidePassword() {
+  BlockRegister.children[5].classList.toggle("hidden");
+  BlockRegister.children[6].classList.toggle("hidden");
+}

@@ -81,9 +81,31 @@ button {
       font-weight: 700;
       font-family: $ff-primary;
     }
+
     ::placeholder {
       font-weight: 900;
     }
+    .BlockRegister_ShowIcon {
+      top: 223px;
+      right: 70px;
+      position: absolute;
+      background: url(./public/icon/show-password.png) no-repeat;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    .BlockRegister_Icon {
+      top: 223px;
+      right: 70px;
+      position: absolute;
+      background: url(./public/icon/show-password-hide.png) no-repeat;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
     &_send {
       margin-top: $margin-xl;
     }

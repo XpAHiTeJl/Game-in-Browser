@@ -77,7 +77,7 @@ const exitButton = new Button({
     click: toggleLogine,
   },
 });
-const exitButtonreg = new Button({
+const exitButtonReg = new Button({
   className: "exitButtonReg hidden",
   events: {
     click: toggleRegister,
@@ -87,7 +87,7 @@ const exitButtonreg = new Button({
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [defaultBlock, BlockAuth, BlockRegister, exitButton, exitButtonreg],
+  children: [defaultBlock, BlockAuth, BlockRegister, exitButton, exitButtonReg],
 });
 
 const App = new Application({
@@ -104,7 +104,7 @@ function toggleLogine() {
 function toggleRegister() {
   BlockRegister.classList.toggle("hidden");
   defaultBlock.classList.toggle("hidden");
-  exitButtonreg.classList.toggle("hidden");
+  exitButtonReg.classList.toggle("hidden");
 }
 
 prepend(app, App);
