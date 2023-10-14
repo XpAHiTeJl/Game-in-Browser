@@ -2,6 +2,7 @@ import { append, appendMany } from "../utils/append";
 import { defineEvent } from "../utils/defineEvent";
 import { isArray } from "../utils/isArray";
 import { render } from "./render";
+import { isExisting } from "../utils/isExisting";
 
 export class Component {
   constructor({
@@ -40,15 +41,9 @@ export class Component {
       }
     }
 
-    if (!this.events) return element;
-
-    for (const event of this.events) {
-      for (const keyOfEvent in event) {
-        defineEvent({
-          el: element,
-          event: keyOfEvent,
-          eventFunc: event[keyOfEvent],
-        });
+    if (isExisting(events)) {
+      for (const event in events) {
+        element.addEventListener(event, events[event]);
       }
     }
 

@@ -2,53 +2,39 @@
 @import "./scss/variables.scss";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 }
 
 body {
+  @include d-flex(center, center);
+
   margin: 0;
-  display: flex;
-  place-items: center;
-  justify-content: center;
-  min-width: 320px;
   min-height: 100vh;
   background-image: url(./public/images/menu/bg-main-menu.gif);
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  cursor: url(./public/icon/cursor.png), auto;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-family: inherit;
-  cursor: pointer;
+  cursor: url(./public/icon/cursor.png), auto;
   margin: 10px;
   background-color: $third-text-color;
 }
-
 .mainBlock,
 .mainBlockMenu {
   @include d-flex(center, stretch, column);
 }
-.footer {
-  margin-top: $margin-m;
-  text-align: center;
-}
+
 .mainBlock {
   padding: $padding-xl;
   border: 1px solid;
   backdrop-filter: blur(5px);
   font-family: $ff-primary;
+<<<<<<< HEAD
   .profile {
     display: none;
     text-align: center;
@@ -77,6 +63,20 @@ button {
     }
     button:hover {
       background-color: $thrid-bg;
+=======
+
+  &Autorization {
+    @include d-flex(center, center, column);
+    margin: $margin-l;
+    .BlockAutorization {
+      .Login,
+      .Registred {
+        transition: 0.4s ease-in-out;
+      }
+      button:hover {
+        background-color: $thrid-bg;
+      }
+>>>>>>> 032978950b6b417ef3e7a90c485e838969881631
     }
 
   }
@@ -92,6 +92,41 @@ button {
       background-color: $thrid-bg;
     }
   }
+  .BlockAuth {
+    @include d-flex(center, center, column);
+    &_mail,
+    &_password {
+      margin: $margin-xs;
+      width: 250px;
+      height: 50px;
+      text-align: center;
+      border-radius: 15px;
+      font-weight: 700;
+      font-family: $ff-primary;
+    }
+    ::placeholder {
+      font-weight: 900;
+    }
+    &_send {
+      margin-top: $margin-xl;
+    }
+  }
+  .exitButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(./public/icon/exit.svg) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .hidden {
+    display: none;
+  }
+}
+.footer {
+  margin-top: $margin-m;
+  text-align: center;
 }
 
 
