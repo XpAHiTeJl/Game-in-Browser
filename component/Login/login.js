@@ -7,11 +7,11 @@ export const BlockAuth = new Component({
   children: [
     new Input({
       className: "BlockAuth_mail",
-      placeholder: "Почта",
+      placeholder: "Mail",
     }),
     new Input({
       className: "BlockAuth_password",
-      placeholder: "Пароль",
+      placeholder: "Password",
     }),
     new Button({
       className: "BlockAuth_send",

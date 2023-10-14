@@ -66,10 +66,13 @@ button {
       background-color: $thrid-bg;
     }
   }
-  .BlockAuth {
+
+  .BlockAuth,
+  .BlockRegister {
     @include d-flex(center, center, column);
     &_mail,
-    &_password {
+    &_password,
+    &_Nick {
       margin: $margin-xs;
       width: 250px;
       height: 50px;
@@ -86,6 +89,15 @@ button {
     }
   }
   .exitButton {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: url(./public/icon/exit.svg) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+  .exitButtonReg {
     position: absolute;
     right: 0;
     top: 0;
