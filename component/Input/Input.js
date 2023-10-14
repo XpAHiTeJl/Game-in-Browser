@@ -11,6 +11,7 @@ export class Input extends Component {
     children,
     events,
     placeholder,
+    type,
     ...attrs
   }) {
     super({
@@ -21,12 +22,14 @@ export class Input extends Component {
       children,
       events,
       placeholder,
+      type,
       ...attrs,
     });
 
     this.input = document.createElement("input");
     this.input.className = className;
     this.input.placeholder = placeholder;
+    this.input.type = type;
 
     return this.input;
   }
