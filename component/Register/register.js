@@ -1,9 +1,9 @@
 import { Button, Input } from "../../component/index";
 import { Component } from "../../core/component";
 
-export const inputsAndSubmit = new Component({
+export const registerBlock = new Component({
     tagName: "div",
-    className: "inputsAndSubmit",
+    className: "registerBlock hidden",
     children: [
       new Input({
         className: "login",

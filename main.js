@@ -1,5 +1,6 @@
 import "./style.scss";
 import { BlockAuth } from "./component/Login/login";
+import {registerBlock} from "./component/Register/register"
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
 import { append, prepend, remove } from "./utils/append";
@@ -31,6 +32,9 @@ const mainBlockAutorization = new Component({
         new Button({
           className: "Register",
           textContent: "Register",
+          events: {
+            click: toggleRegister
+          }
         }),
       ],
     }),
@@ -67,17 +71,24 @@ const defaultBlock = new Component({
   children: [mainBlockAutorization, mainBlockMenu],
 });
 
-const exitButton = new Button({
+const exitButtonLogin = new Button({
   className: "exitButton hidden",
   events: {
     click: toggleLogin,
   },
 });
 
+const exitButtonReg = new Button({
+  className: "exitButton hidden",
+  events: {
+    click: toggleRegister,
+  },
+});
+
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-  children: [defaultBlock, BlockAuth, exitButton],
+  children: [defaultBlock, BlockAuth, registerBlock, exitButtonReg, exitButtonLogin],
 });
 
 const App = new Application({
@@ -89,7 +100,13 @@ const App = new Application({
 function toggleLogin() {
   defaultBlock.classList.toggle("hidden");
   BlockAuth.classList.toggle("hidden");
-  exitButton.classList.toggle("hidden");
+  exitButtonLogin.classList.toggle("hidden");
+}
+
+function toggleRegister() {
+  defaultBlock.classList.toggle("hidden");
+  registerBlock.classList.toggle("hidden");
+  exitButtonReg.classList.toggle("hidden");
 }
 
 prepend(app, App);

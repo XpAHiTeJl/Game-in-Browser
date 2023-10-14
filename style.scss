@@ -35,12 +35,33 @@ button {
   backdrop-filter: blur(5px);
   font-family: $ff-primary;
 
+  .profile {
+    display: none;
+    text-align: center;
+    font-family: $ff-secondary;
+    border-bottom: 1px solid;
+    margin-top: $margin-m;
+  }
+  .registerBlock {
+    @include d-flex(center, center, column);
+    .input {
+      height: 20px;
+      width: 200px;
+      margin: $margin-xs;
+      border-radius: $margin-xs;
+      padding: $padding-xs;
+      border: 2px solid $secondary-text-color;
+      font-weight: 700;
+      font-family: $ff-primary;
+    }
+  }
+
   &Autorization {
     @include d-flex(center, center, column);
     margin: $margin-l;
     .BlockAutorization {
       .Login,
-      .Registred {
+      .Register {
         transition: 0.4s ease-in-out;
       }
       button:hover {
@@ -63,8 +84,7 @@ button {
   }
   .BlockAuth {
     @include d-flex(center, center, column);
-    &_mail,
-    &_password {
+    .input {
       margin: $margin-xs;
       width: 250px;
       height: 50px;

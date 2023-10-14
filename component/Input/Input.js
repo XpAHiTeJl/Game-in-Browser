@@ -26,7 +26,6 @@ export class Input extends Component {
 
     this.input = document.createElement("input");
     this.input.className = "input";
-    this.input.className = className;
     this.input.placeholder = placeholder;
 
     return this.input;
