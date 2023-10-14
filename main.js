@@ -1,18 +1,9 @@
 import "./style.scss";
-<<<<<<< HEAD
-import { inputsAndSubmit } from "./public/pagesJS/register";
-=======
 import { BlockAuth } from "./component/Login/login";
->>>>>>> 032978950b6b417ef3e7a90c485e838969881631
 import { App as Application } from "./App/App";
 import { Button, Input } from "./component/index";
 import { append, prepend, remove } from "./utils/append";
 import { Component } from "./core/component";
-<<<<<<< HEAD
-import { render } from "./core/render";
-import { defineEvent } from "./utils/defineEvent";
-=======
->>>>>>> 032978950b6b417ef3e7a90c485e838969881631
 
 const app = document.querySelector("body");
 
@@ -20,16 +11,6 @@ const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
   children: [
-<<<<<<< HEAD
-    new Button({
-      className: "Login",
-      textContent: "Login",
-    }),
-    new Button({
-      className: "Register",
-      textContent: "Register",
-    })
-=======
     new Component({
       tagName: "div",
       className: "BlockAutorization",
@@ -38,7 +19,7 @@ const mainBlockAutorization = new Component({
           className: "Login",
           textContent: "Login",
           events: {
-            click: toggleLogine,
+            click: toggleLogin,
           },
         }),
         new Button({
@@ -52,7 +33,6 @@ const mainBlockAutorization = new Component({
       className: "Profil",
       textContent: "Name Profile",
     }),
->>>>>>> 032978950b6b417ef3e7a90c485e838969881631
   ],
 });
 
@@ -97,24 +77,14 @@ const defaultBlock = new Component({
 const exitButton = new Button({
   className: "exitButton hidden",
   events: {
-    click: toggleLogine,
+    click: toggleLogin,
   },
 });
 
 const mainBlock = new Component({
   tagName: "div",
   className: "mainBlock",
-<<<<<<< HEAD
-  children: [mainBlockAutorization, profile, mainBlockMenu, inputsAndSubmit]
-});
-
-const footer = new Component({
-  tagName: "div",
-  className: "footer",
-  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
-=======
   children: [defaultBlock, BlockAuth, exitButton],
->>>>>>> 032978950b6b417ef3e7a90c485e838969881631
 });
 
 const App = new Application({
@@ -123,7 +93,7 @@ const App = new Application({
   children: [mainBlock, footer],
 });
 
-function toggleLogine() {
+function toggleLogin() {
   defaultBlock.classList.toggle("hidden");
   BlockAuth.classList.toggle("hidden");
   exitButton.classList.toggle("hidden");
