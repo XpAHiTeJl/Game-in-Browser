@@ -53,6 +53,19 @@ button {
       border: 2px solid $secondary-text-color;
       font-weight: 700;
       font-family: $ff-primary;
+      transition: 0.2s ease-in;
+    }
+
+    .input:hover {
+      box-shadow: 4px 4px 5px;
+    }
+
+    .submit {
+      transition: 0.2s ease-in;
+    }
+    .submit:hover {
+      background-color: $thrid-bg;
+      box-shadow: 4px 4px 5px;
     }
   }
 
@@ -92,12 +105,23 @@ button {
       border-radius: 15px;
       font-weight: 700;
       font-family: $ff-primary;
+      transition: 0.2s ease-in;
     }
+
+    .input:hover {
+      box-shadow: 4px 4px 5px;
+    }
+
     ::placeholder {
       font-weight: 900;
     }
     &_send {
       margin-top: $margin-xl;
+      transition: 0.2s ease-in;
+    }
+    &_send:hover {
+      background-color: $thrid-bg;
+      box-shadow: 4px 4px 5px;
     }
   }
   .exitButton {
@@ -108,7 +132,14 @@ button {
     background-size: contain;
     width: 30px;
     height: 30px;
+    transition: 0.2s ease-in;
   }
+
+  .exitButton:hover {
+    transition: 0.2s ease-in;
+    scale: 1.1;
+  }
+
   .hidden {
     display: none;
   }
