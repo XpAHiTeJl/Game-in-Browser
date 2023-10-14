@@ -7,6 +7,12 @@ import { Component } from "./core/component";
 
 const app = document.querySelector("body");
 
+const footer = new Component({
+  tagName: "div",
+  className: "footer",
+  textContent: "All rights reserved © 2023 |ヾ(≧▽≦*)o |",
+});
+
 const mainBlockAutorization = new Component({
   tagName: "div",
   className: "mainBlockAutorization",
@@ -36,12 +42,6 @@ const mainBlockAutorization = new Component({
   ],
 });
 
-const profile = new Component({
-  tagName: "div",
-  className: "profile",
-  textContent: "Name Profile",
-})
-
 const mainBlockMenu = new Component({
   tagName: "div",
   className: "mainBlockMenu",
@@ -57,13 +57,6 @@ const mainBlockMenu = new Component({
     new Button({
       className: "Exit Profile",
       textContent: "Exit Profile",
-      events: defineEvent({
-        el: "Exit Profile",
-        event: "click",
-        eventFunc: () => {
-          console.log("exit");
-        },
-      })
     }),
   ],
 });
