@@ -34,36 +34,6 @@ button {
   border: 1px solid;
   backdrop-filter: blur(5px);
   font-family: $ff-primary;
-<<<<<<< HEAD
-  .profile {
-    display: none;
-    text-align: center;
-    font-family: $ff-secondary;
-    border-bottom: 1px solid;
-    margin-top: $margin-m;
-  }
-  .inputsAndSubmit {
-    @include d-flex(center, center, column);
-    .input {
-      margin: $margin-xs;
-      border-radius: $margin-xs;
-      padding: $padding-xs;
-      border: 2px solid $secondary-text-color;
-    }
-  }
-  &Autorization {
-    display: none;
-    @include d-flex(center, center);
-    margin: $margin-xl;
-    .Login,
-    .Register {
-    display: none;
-      
-      transition: 0.4s ease-in-out;
-    }
-    button:hover {
-      background-color: $thrid-bg;
-=======
 
   &Autorization {
     @include d-flex(center, center, column);
@@ -76,7 +46,6 @@ button {
       button:hover {
         background-color: $thrid-bg;
       }
->>>>>>> 032978950b6b417ef3e7a90c485e838969881631
     }
 
   }
