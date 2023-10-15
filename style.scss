@@ -95,8 +95,31 @@ button {
       margin: 0;
       padding: 0;
     }
+
     .BlockRegister_Icon {
       top: 223px;
+      right: 70px;
+      position: absolute;
+      background: url(./public/icon/show-password-hide.png) no-repeat;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .BlockAuth_ShowIcon {
+      top: 150px;
+      right: 70px;
+      position: absolute;
+      background: url(./public/icon/show-password.png) no-repeat;
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .BlockAuth_Icon {
+      top: 150px;
       right: 70px;
       position: absolute;
       background: url(./public/icon/show-password-hide.png) no-repeat;

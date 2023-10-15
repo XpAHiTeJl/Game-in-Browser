@@ -15,13 +15,13 @@ const BlockRegister_mail = new Input({
   placeholder: "Mail",
 });
 
-const BlockRegister_ShowIcon = new Button({
+export const BlockRegister_ShowIcon = new Button({
   className: "BlockRegister_ShowIcon",
   events: {
     click: HidePassword,
   },
 });
-const BlockRegister_Icon = new Button({
+export const BlockRegister_Icon = new Button({
   className: "BlockRegister_Icon hidden",
   events: {
     click: HidePassword,
