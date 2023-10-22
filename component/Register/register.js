@@ -58,3 +58,39 @@ function HidePassword() {
     BlockRegister_password.setAttribute("type", "password");
   }
 }
+
+// const BlockRegister_mailValue = BlockRegister_mail.value.trim();
+
+BlockRegister_mail.addEventListener("keyup", (e) => {
+  if (e.target.value.length < 3) {
+    BlockRegister_mail.style.background = "red";
+  } else {
+    BlockRegister_mail.style.background = "green";
+  }
+});
+
+function validatePassword(Password) {
+  let isStrValue = false;
+  let isNumValue = false;
+
+  for (let i = 0; i < Password.length; i++) {
+    const value = +Password[i];
+
+    if (isNaN(value)) {
+      isStrValue = true;
+      continue;
+    }
+
+    if (typeof value === "number") {
+      isNumValue = true;
+    }
+  }
+
+  if (isStrValue && isNumValue) {
+    BlockRegister_mail.style.background = "green";
+  }
+
+  if (Password.length >= 8) return false;
+  alert("Пароль коротки!");
+  return true;
+}
