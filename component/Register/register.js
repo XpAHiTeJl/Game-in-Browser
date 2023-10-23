@@ -61,36 +61,28 @@ function HidePassword() {
 
 // const BlockRegister_mailValue = BlockRegister_mail.value.trim();
 
-BlockRegister_mail.addEventListener("keyup", (e) => {
+BlockRegister_Nick.addEventListener("keyup", (e) => {
   if (e.target.value.length < 3) {
-    BlockRegister_mail.style.background = "red";
+    BlockRegister_Nick.style.background = "red";
   } else {
-    BlockRegister_mail.style.background = "green";
+    BlockRegister_Nick.style.background = "#a7e98c";
   }
 });
 
-function validatePassword(Password) {
-  let isStrValue = false;
-  let isNumValue = false;
-
-  for (let i = 0; i < Password.length; i++) {
-    const value = +Password[i];
-
-    if (isNaN(value)) {
-      isStrValue = true;
-      continue;
-    }
-
-    if (typeof value === "number") {
-      isNumValue = true;
-    }
+BlockRegister_password.addEventListener("blur", (e) => {
+  if (e.target.value.length < 6) {
+    BlockRegister_password.style.background = "red";
+    alert("Пароль должен быть больше 6 символов!");
+  } else {
+    BlockRegister_password.style.background = "#a7e98c";
   }
+});
 
-  if (isStrValue && isNumValue) {
-    BlockRegister_mail.style.background = "green";
+BlockRegister_mail.addEventListener("blur", () => {
+  if (BlockRegister_mail.value.includes("@", ".")) {
+    BlockRegister_mail.style.background = "#a7e98c";
+  } else {
+    alert("Почта должно содержать @");
+    BlockRegister_mail.style.background = "red";
   }
-
-  if (Password.length >= 8) return false;
-  alert("Пароль коротки!");
-  return true;
-}
+});
