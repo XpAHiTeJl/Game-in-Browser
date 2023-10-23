@@ -73,6 +73,7 @@ button {
     &_mail,
     &_password,
     &_Nick {
+      background-color: white;
       margin: $margin-xs;
       width: 250px;
       height: 50px;
@@ -131,6 +132,15 @@ button {
 
     &_send {
       margin-top: $margin-xl;
+    }
+    :hover {
+      border-color: black;
+    }
+    .styleRed {
+      background-color: red;
+    }
+    .styleGreen {
+      background-color: #a7e98c;
     }
   }
   .exitButton {

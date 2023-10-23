@@ -1,5 +1,6 @@
 import { Button, Input } from "../../component/index";
 import { Component } from "../../core/component";
+import "../../style.scss";
 
 const BlockRegister_password = new Input({
   className: "BlockRegister_password",
@@ -63,26 +64,37 @@ function HidePassword() {
 
 BlockRegister_Nick.addEventListener("keyup", (e) => {
   if (e.target.value.length < 3) {
-    BlockRegister_Nick.style.background = "red";
+    BlockRegister_Nick.classList.add("styleRed");
+    BlockRegister_Nick.classList.remove("styleGreen");
   } else {
-    BlockRegister_Nick.style.background = "#a7e98c";
+    BlockRegister_Nick.classList.add("styleGreen");
+    BlockRegister_Nick.classList.remove("styleRed");
   }
 });
 
-BlockRegister_password.addEventListener("blur", (e) => {
+BlockRegister_password.addEventListener("keyup", (e) => {
   if (e.target.value.length < 6) {
-    BlockRegister_password.style.background = "red";
-    alert("Пароль должен быть больше 6 символов!");
+    BlockRegister_password.classList.add("styleRed");
+    BlockRegister_password.classList.remove("styleGreen");
   } else {
-    BlockRegister_password.style.background = "#a7e98c";
+    BlockRegister_password.classList.add("styleGreen");
+    BlockRegister_password.classList.remove("styleRed");
   }
 });
 
 BlockRegister_mail.addEventListener("blur", () => {
-  if (BlockRegister_mail.value.includes("@", ".")) {
-    BlockRegister_mail.style.background = "#a7e98c";
+  if (BlockRegister_mail.value.includes("@" && ".")) {
+    BlockRegister_mail.classList.add("styleGreen");
+    BlockRegister_mail.classList.remove("styleRed");
   } else {
-    alert("Почта должно содержать @");
-    BlockRegister_mail.style.background = "red";
+    alert("Почта должна содержать '@' и '.' ");
+    BlockRegister_mail.classList.remove("styleGreen");
+    BlockRegister_mail.classList.add("styleRed");
+  }
+});
+
+BlockRegister.children[5].addEventListener("click", () => {
+  if (BlockRegister_Nick.classList.contains("styleGreen")) {
+    console.log("dasda");
   }
 });
