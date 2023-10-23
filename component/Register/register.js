@@ -94,7 +94,11 @@ BlockRegister_mail.addEventListener("blur", () => {
 });
 
 BlockRegister.children[5].addEventListener("click", () => {
-  if (BlockRegister_Nick.classList.contains("styleGreen")) {
-    console.log("dasda");
+  if (
+    BlockRegister_Nick.classList.contains("styleGreen") &&
+    BlockRegister_mail.classList.contains("styleGreen") &&
+    BlockRegister_password.classList.contains("styleGreen")
+  ) {
+    console.log("testGreenCard");
   }
 });
