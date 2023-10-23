@@ -99,6 +99,10 @@ BlockRegister.children[5].addEventListener("click", () => {
     BlockRegister_mail.classList.contains("styleGreen") &&
     BlockRegister_password.classList.contains("styleGreen")
   ) {
-    console.log("test");
+    console.log([
+      `Nickname: ${BlockRegister_Nick.value}`,
+      `Mail: ${BlockRegister_mail.value}`,
+      `Password: ${BlockRegister_password.value}`,
+    ]);
   }
 });
